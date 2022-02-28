@@ -1,14 +1,38 @@
 # Bitf
 
-This is the beginning. 
+BitFoon is a Coin trading game that is designed to show Google Spanner's functionality in a Gaming or Financials scenario. 
+
+Game Sessions are created by the Host Player which provides a key to the rest of the players. 
+
+
+
+Specifically: 
+- Global Multiregion RDBMS with Acid transactions
+- Auto-Scaling/Sharding
+- Low Latency Query and Update times. 
+- 99.999% High Availability
+
+The project is broken into a few architectural components. 
+- Spanner DB
+- Cloud Functions Processing of Trading activity
+- Pub/Sub queue of Trading objects
+- CloudRun Deployment for UI 
+- Automated Random Auto Trading Bot (Computer Player) 
 
 
 
 Notes: 
 Create project. 
-Enable Cloud Run
-Enable Spanner 
-Enable CLoud Functions
+
+Enable APIs for : 
+- Cloud Build
+- Cloud Run 
+- Container Registry
+- Resource Manager APIs
+- Spanner 
+- Cloud Functions
+
+
 Create Spanner Instance
 Create Spanner Database
 
