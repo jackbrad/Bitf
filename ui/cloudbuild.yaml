@@ -11,3 +11,4 @@ steps:
   args: ['run', 'deploy', 'SERVICE-NAME', '--image', 'gcr.io/bitfoon/IMAGE', '--region', 'REGION']
 images:
 - gcr.io/bitfoon/IMAGE
+ 
