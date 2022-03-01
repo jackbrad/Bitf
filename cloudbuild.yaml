@@ -21,6 +21,7 @@ steps:
    - '--port' 
    - '80'
    - '--allow-unauthenticated'
+
 # Deploy container image to Cloud Run in the APAC region
  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
@@ -74,6 +75,8 @@ steps:
    - 'bitfoon-ui-us'
    - '--domain' 
    - 'us.bitfoon.com'
+   - '--region'
+   - 'us-east1'
 
 
 options:
