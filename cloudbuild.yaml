@@ -18,6 +18,5 @@ steps:
    - 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA'
    - '--region'
    - 'us-east1'
-   - '--port=80'
 options:
   logging: CLOUD_LOGGING_ONLY
