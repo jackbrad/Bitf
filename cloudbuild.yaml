@@ -1,6 +1,6 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/biftfoon/ui-image', '.', 'CLOUD_LOGGING_ONLY']
+  args: ['build', '-t', 'gcr.io/biftfoon/ui-image', '.']
 options:
   logging: CLOUD_LOGGING_ONLY
