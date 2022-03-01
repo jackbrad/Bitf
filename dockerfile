@@ -4,7 +4,7 @@ FROM node:16 As build
 #set working dir
 WORKDIR /app
 #copy the packages files
-COPY package*.json .
+COPY package*.json ./
 #run the install of packages
 RUN npm install
 #copy all files
