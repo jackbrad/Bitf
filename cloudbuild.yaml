@@ -20,5 +20,6 @@ steps:
    - 'us-east1'
    - '--port' 
    - '80'
+   - '--allow-unauthenticated'
 options:
   logging: CLOUD_LOGGING_ONLY
