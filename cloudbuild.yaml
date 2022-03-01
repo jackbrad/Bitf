@@ -64,20 +64,6 @@ steps:
 #us-east4 (Northern Virginia)
 #us-west1 (Oregon) leaf icon Low CO2
 
- - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-   entrypoint: gcloud
-   args:
-   - 'beta'
-   - 'run'
-   - 'domain-mappings' 
-   - 'create' 
-   - '--service' 
-   - 'bitfoon-ui-us'
-   - '--domain' 
-   - 'us.bitfoon.com'
-   - '--region'
-   - 'us-east1'
-
 
 options:
   logging: CLOUD_LOGGING_ONLY

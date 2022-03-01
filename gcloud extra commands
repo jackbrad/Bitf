@@ -1,1 +1,19 @@
 gcloud beta dns --project=bitfoon managed-zones create bitfoon-zone --description="" --dns-name="bitfoon.com." --visibility="public" --dnssec-state="off" --log-dns-queries
+
+gcloud beta dns --project=bitfoon record-sets transaction start --zone="bitfoon-zone" && gcloud beta dns --project=bitfoon record-sets transaction add ghs.googlehosted.com. --name="us.bitfoon.com." --ttl="300" --type="CNAME" --zone="bitfoon-zone" && gcloud beta dns --project=bitfoon record-sets transaction execute --zone="bitfoon-zone"
+
+
+#Yaml extenstion
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   args:
+   - 'beta'
+   - 'run'
+   - 'domain-mappings' 
+   - 'create' 
+   - '--service' 
+   - 'bitfoon-ui-us'
+   - '--domain' 
+   - 'us.bitfoon.com'
+   - '--region'
+   - 'us-east1'
