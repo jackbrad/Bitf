@@ -4,12 +4,3 @@ steps:
   args: ['build', '-t', 'gcr.io/biftfoon/ui-image', '.', 'CLOUD_LOGGING_ONLY']
 options:
   logging: CLOUD_LOGGING_ONLY
-# Push the container image to Container Registry
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/biftfoon/ui-image']
-# Deploy container image to Cloud Run
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
-  args: ['run', 'deploy', 'ui-image', '--image', 'gcr.io/biftfoon/ui-image', '--region', 'REGION']
-images:
-- gcr.io/biftfoon/ui-image
