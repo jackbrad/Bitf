@@ -7,7 +7,7 @@ steps:
  - name: 'gcr.io/cloud-builders/docker'
    args: ['push', 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA']
  
-# Deploy container image to Cloud Run
+# Deploy container image to Cloud Run in the east region
  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
    args:
@@ -21,5 +21,37 @@ steps:
    - '--port' 
    - '80'
    - '--allow-unauthenticated'
+
+# Deploy container image to Cloud Run in the APAC region
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   args:
+   - 'run'
+   - 'deploy'
+   - 'bitfoon-ui'
+   - '--image'
+   - 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA'
+   - '--region'
+   - 'asia-northeast1'
+   - '--port' 
+   - '80'
+   - '--allow-unauthenticated'
+
+# Deploy container image to Cloud Run in the European region
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   args:
+   - 'run'
+   - 'deploy'
+   - 'bitfoon-ui'
+   - '--image'
+   - 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA'
+   - '--region'
+   - 'Netherlands'
+   - '--port' 
+   - '80'
+   - '--allow-unauthenticated'
+
+
 options:
   logging: CLOUD_LOGGING_ONLY
