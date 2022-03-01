@@ -4,3 +4,7 @@ steps:
   args: ['build', '-t', 'gcr.io/biftfoon/ui-image', '.']
 options:
   logging: CLOUD_LOGGING_ONLY  
+
+#Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/biftfoon/ui-image']
