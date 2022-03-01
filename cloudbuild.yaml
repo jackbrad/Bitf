@@ -6,7 +6,7 @@ steps:
  # Push the container image to Container Registry
  - name: 'gcr.io/cloud-builders/docker'
    args: ['push', 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA']
-
+ 
 # Deploy container image to Cloud Run
  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
@@ -18,7 +18,5 @@ steps:
    - 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA'
    - '--region'
    - 'us-east1-d'
-   images:
-    - 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA'
 options:
   logging: CLOUD_LOGGING_ONLY
