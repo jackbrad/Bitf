@@ -13,7 +13,7 @@ steps:
    args:
    - 'run'
    - 'deploy'
-   - 'bitfoon-ui'
+   - 'bitfoon-ui-us'
    - '--image'
    - 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA'
    - '--region'
@@ -27,7 +27,7 @@ steps:
    args:
    - 'run'
    - 'deploy'
-   - 'bitfoon-ui'
+   - 'bitfoon-ui-jp'
    - '--image'
    - 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA'
    - '--region'
@@ -42,7 +42,7 @@ steps:
    args:
    - 'run'
    - 'deploy'
-   - 'bitfoon-ui'
+   - 'bitfoon-ui-eu'
    - '--image'
    - 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA'
    - '--region'
@@ -62,6 +62,18 @@ steps:
 #us-east1 (South Carolina)
 #us-east4 (Northern Virginia)
 #us-west1 (Oregon) leaf icon Low CO2
+
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   args:
+   - 'beta'
+   - 'run'
+   - 'domain-mappings' 
+   - 'create' 
+   - '--service' 
+   - 'bitfoon-ui-us'
+   - '--domain' 
+   - 'us.bitfoon.com'
 
 
 options:

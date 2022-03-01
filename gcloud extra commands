@@ -1,0 +1,1 @@
+gcloud beta dns --project=bitfoon managed-zones create bitfoon-zone --description="" --dns-name="bitfoon.com." --visibility="public" --dnssec-state="off" --log-dns-queries
