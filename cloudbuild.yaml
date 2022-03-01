@@ -21,7 +21,6 @@ steps:
    - '--port' 
    - '80'
    - '--allow-unauthenticated'
-
 # Deploy container image to Cloud Run in the APAC region
  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
@@ -47,10 +46,22 @@ steps:
    - '--image'
    - 'gcr.io/$PROJECT_ID/bitfoon-ui:$COMMIT_SHA'
    - '--region'
-   - 'Netherlands'
+   - 'europe-west4'
    - '--port' 
    - '80'
    - '--allow-unauthenticated'
+
+#Regional options
+#asia-east1 (Taiwan)
+#asia-northeast1 (Tokyo)
+#asia-northeast2 (Osaka)
+#europe-north1 (Finland) leaf icon Low CO2
+#europe-west1 (Belgium) leaf icon Low CO2
+#europe-west4 (Netherlands)
+#us-central1 (Iowa) leaf icon Low CO2
+#us-east1 (South Carolina)
+#us-east4 (Northern Virginia)
+#us-west1 (Oregon) leaf icon Low CO2
 
 
 options:
