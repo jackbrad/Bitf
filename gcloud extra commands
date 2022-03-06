@@ -17,3 +17,6 @@ gcloud beta dns --project=bitfoon record-sets transaction start --zone="bitfoon-
    - 'us.bitfoon.com'
    - '--region'
    - 'us-east1'
+
+
+gcloud beta dataflow flex-template run loadgen --template-file-gcs-location gs://dataflow-templates-us-east1/latest/flex/Streaming_Data_Generator --region us-east1 --parameters schemaLocation=gs://bitfoon-config/loadgen.json,topic=projects/bitfoon/topics/Orders,qps=1,maxNumWorkers=1

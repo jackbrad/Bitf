@@ -1,0 +1,12 @@
+{
+    "SessionUUID": "{{uuid()}}" , 
+    "OrderUUID": "{{uuid()}}" ,
+    "CoinUUID": "a4bc118a-9a70-11ec-b909-0242ac120002" ,
+    "PlayerUUID": "{{uuid()}}" ,
+    "Placed": "{{date("yyyy-MM-dd HH:mm:ss.SSS")}}",
+    "Ask": {{random("0","1")}} ,
+    "Price": {{float(.01,9999.99)}} ,
+    "UnitSize": {{float(.001,9999.999)}} ,
+    "Cancelled": {{random("0","1")}},
+    "Filled": 0 
+}
